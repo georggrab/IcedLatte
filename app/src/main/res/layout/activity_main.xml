@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.softwaree.icelatte.MainActivity"
+    tools:layout_editor_absoluteY="81dp">
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="match_parent"
+        android:layout_height="116dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <org.apmem.tools.layouts.FlowLayout
+            android:id="@+id/coinsFlow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"></org.apmem.tools.layouts.FlowLayout>
+
+    </ScrollView>
+
+    <TextView
+        android:id="@+id/priceTextView"
+        android:layout_width="102dp"
+        android:layout_height="34dp"
+        android:layout_marginEnd="92dp"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="28dp"
+        android:text="@string/preis"
+        app:layout_constraintEnd_toStartOf="@+id/messageTextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/saldoTextView"
+        android:layout_width="102dp"
+        android:layout_height="34dp"
+        android:layout_marginEnd="92dp"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="9dp"
+        android:text="@string/saldo"
+        app:layout_constraintEnd_toStartOf="@+id/messageTextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/priceTextView" />
+
+    <TextView
+        android:id="@+id/messageTextView"
+        android:layout_width="130dp"
+        android:layout_height="73dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginTop="32dp"
+        android:text="HALLO"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        tools:text="@string/message" />
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="0dp"
+        android:layout_height="172dp"
+        android:layout_marginBottom="64dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/scrollView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <org.apmem.tools.layouts.FlowLayout
+            android:id="@+id/coffeeFlow"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="75dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintVertical_bias="0.619"></org.apmem.tools.layouts.FlowLayout>
+    </android.support.constraint.ConstraintLayout>
+
+</android.support.constraint.ConstraintLayout>

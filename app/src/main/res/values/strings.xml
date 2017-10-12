@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">IceLatte</string>
+    <string name="button1">Bitte klick mich </string>
+    <string name="message">HALLO</string>
+    <string name="preis">PREIS in €</string>
+    <string name="saldo">GUTHABEN in €</string>
+</resources>
