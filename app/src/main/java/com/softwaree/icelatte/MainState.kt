@@ -16,6 +16,9 @@ fun calculateChange(change: Int) = {
     coins.forEach {
 
 
+        val coinsToReturn = change % it.cash
+
+
     }
 
 }

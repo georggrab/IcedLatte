@@ -23,6 +23,8 @@ class MainActivity : AppCompatActivity() {
 
         val mainState = MainState(0, 0, ApplicationState.SAYHELLO)
 
+        giveMeChange(135)
+
         // Fill Screen with Buttons
         coins.forEach { createCoinButton(mainState, it) }
         coffeeTypes.forEach { createCoffeeButton(mainState, it) }
@@ -48,9 +50,23 @@ class MainActivity : AppCompatActivity() {
             Log.d("INFO", "i was pressed: " + clickedButton.text)
             state.price = COFFEETYPES.valueOf(clickedButton.text.toString()).cash
             priceTextView.text = state.price.toString()
+
+            if (state.balance >= state.price){
+                giveMeChange(state.balance -state.price)
+                state.balance = 0
+            }
         }
         findViewById<FlowLayout>(R.id.coffeeFlow).addView(button)
     }
 
+    private fun giveMeChange(saldo:Int) {
 
+        var remainingSaldo = saldo
+
+        for (coin in coins.sorted().reversed()) {
+            val countCoin = (remainingSaldo / coin.cash)
+            remainingSaldo = saldo.rem(coin.cash)
+            Log.d("INFO","Coin: " + coin.name + " Anzahl: " + countCoin + " Rest: " + remainingSaldo)
+        }
+    }
 }
