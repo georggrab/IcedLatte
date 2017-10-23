@@ -17,6 +17,16 @@ class MainActivity : AppCompatActivity() {
     private val coffeeTypes: Array<COFFEETYPES> = COFFEETYPES.values()
 
 
+    // static reference to MainActivity for easy access
+    companion object {
+        lateinit var instance: MainActivity
+            private set
+    }
+
+    init {
+        MainActivity.instance = this
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -39,7 +49,7 @@ class MainActivity : AppCompatActivity() {
             state.balance += valueOf(clickedButton.text.toString())
             saldoTextView.text = state.balance.toString()
         }
-        findViewById<FlowLayout>(R.id.coinsFlow).addView(button)
+        coinsFlow.addView(button)
     }
 
     private fun createCoffeeButton(state: MainState, bean: COFFEETYPES) {
@@ -56,7 +66,7 @@ class MainActivity : AppCompatActivity() {
                 state.balance = 0
             }
         }
-        findViewById<FlowLayout>(R.id.coffeeFlow).addView(button)
+        coffeeFlow.addView(button)
     }
 
     private fun giveMeChange(saldo:Int) {
