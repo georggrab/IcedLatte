@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<apps.gjg.io.buttongrid.ButtonGrid xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    xmlns:grid="http://schemas.android.com/tools"
+
+    custom:deactivated_opacity="0.4"
+
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginEnd="8dp"
+    android:layout_marginStart="8dp"
+    android:id="@+id/buttonGridView"
+    grid:useDefaultMargins="true"
+    grid:alignmentMode="alignBounds">
+
+</apps.gjg.io.buttongrid.ButtonGrid>

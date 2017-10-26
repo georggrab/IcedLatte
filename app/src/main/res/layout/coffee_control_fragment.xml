@@ -1,49 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/coffee_control_fragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <android.support.v7.widget.GridLayout
-        android:layout_width="0dp"
+    <apps.gjg.io.buttongrid.ButtonGrid
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        app:columnCount="3"
-        app:alignmentMode="alignBounds"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="8dp">
-
-        <ToggleButton
-            android:id="@+id/toggleButton14"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="ToggleButton"
-            app:layout_columnWeight="1"
-            app:layout_gravity="fill_horizontal"
-            />
-
-        <ToggleButton
-            android:id="@+id/toggleButton11"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="ToggleButton"
-            app:layout_columnWeight="1"
-            app:layout_gravity="fill_horizontal"
-            />
-
-        <ToggleButton
-            android:id="@+id/toggleButton12"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="ToggleButton"
-            app:layout_columnWeight="1"
-            app:layout_gravity="fill_horizontal"
-             />
-
-    </android.support.v7.widget.GridLayout>
+        android:layout_width="match_parent"
+        android:id="@+id/buttonGrid"
+        android:stretchMode="columnWidth"
+        android:verticalSpacing="0dp"
+        android:gravity="center"
+        android:horizontalSpacing="0dp"
+        >
+    </apps.gjg.io.buttongrid.ButtonGrid>
 
 </android.support.constraint.ConstraintLayout>

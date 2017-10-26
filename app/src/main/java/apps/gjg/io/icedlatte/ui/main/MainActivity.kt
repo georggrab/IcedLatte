@@ -6,9 +6,12 @@ import android.support.v4.app.*
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import apps.gjg.io.buttongrid.ButtonGridConfig
+import apps.gjg.io.buttongrid.GridButtonDescription
 import apps.gjg.io.icedlatte.R
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.coffee_control_fragment.*
+import kotlinx.android.synthetic.main.coffee_control_fragment.view.*
 import kotlinx.android.synthetic.main.coffee_state_fragment.*
 
 class MainActivity : FragmentActivity() {
@@ -49,7 +52,15 @@ class MainFragmentPagerAdapter(fm: FragmentManager) : FragmentPagerAdapter(fm) {
 
 class CoffeeControlFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        return inflater?.inflate(R.layout.coffee_control_fragment, container, false)
+        val coffeeControl: View =
+                inflater!!.inflate(R.layout.coffee_control_fragment, container, false)
+
+        val descriptions = mutableListOf<GridButtonDescription>()
+        descriptions.add(GridButtonDescription("Dei Mudder", 1, 0xFF))
+        descriptions.add(GridButtonDescription("Dei Vadder", 2, 0xFF))
+        coffeeControl.buttonGrid.configure(ButtonGridConfig(4, descriptions))
+
+        return coffeeControl
     }
 }
 
