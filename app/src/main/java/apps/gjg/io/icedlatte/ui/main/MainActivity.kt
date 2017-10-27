@@ -56,9 +56,9 @@ class CoffeeControlFragment : Fragment() {
                 inflater!!.inflate(R.layout.coffee_control_fragment, container, false)
 
         val descriptions = mutableListOf<GridButtonDescription>()
-        descriptions.add(GridButtonDescription("Dei Mudder", 1, 0xFF))
-        descriptions.add(GridButtonDescription("Dei Vadder", 2, 0xFF))
-        coffeeControl.buttonGrid.configure(ButtonGridConfig(4, descriptions))
+        descriptions.add(GridButtonDescription("Dei Mudder", 1, 0xFFAAAAAA.toInt()))
+        descriptions.add(GridButtonDescription("Dei Vadder", 2, 0xFF444444.toInt()))
+        coffeeControl.buttonGrid.configure(ButtonGridConfig(2, descriptions))
 
         return coffeeControl
     }

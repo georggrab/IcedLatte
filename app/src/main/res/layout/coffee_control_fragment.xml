@@ -8,9 +8,7 @@
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
         android:id="@+id/buttonGrid"
-        android:stretchMode="columnWidth"
         android:verticalSpacing="0dp"
-        android:gravity="center"
         android:horizontalSpacing="0dp"
         >
     </apps.gjg.io.buttongrid.ButtonGrid>

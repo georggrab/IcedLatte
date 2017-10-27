@@ -16,6 +16,15 @@ import android.widget.GridView
 var LOG_TAG : String = "ButtonGridComponent"
 
 class ButtonGrid(ctx: Context, attrs: AttributeSet) : GridView(ctx, attrs) {
+
+    override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
+        super.onMeasure(widthMeasureSpec, heightMeasureSpec)
+    }
+
+    override fun layoutChildren() {
+        super.layoutChildren()
+    }
+
     fun configure(buttonGridConfig: ButtonGridConfig) {
         numColumns = buttonGridConfig.columnWidth
         adapter = ButtonGridAdapter(buttonGridConfig)
@@ -44,14 +53,14 @@ class GridButtonDescription(var label: String) {
     }
 }
 
-class ButtonGridAdapter(var buttonGridConfig: ButtonGridConfig) : BaseAdapter() {
+class ButtonGridAdapter(private var buttonGridConfig: ButtonGridConfig) : BaseAdapter() {
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
         return if (convertView == null) {
             val button = LayoutInflater.from(parent!!.context)
                     .inflate(R.layout.button, parent, false) as Button
 
             button.text = buttonGridConfig.gridDescription[position].label
-            button.background = ColorDrawable(buttonGridConfig.gridDescription[position].color)
+            button.setBackgroundColor(buttonGridConfig.gridDescription[position].color)
 
             button.setOnClickListener {
                 notify(buttonGridConfig.gridDescription[position])
